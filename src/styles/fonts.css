@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Lexend-SemiBold';
+    src: url('../assets/fonts/Lexend-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Lexend-Thin';
+    src: url('../assets/fonts/Lexend-Thin.ttf') format('truetype');
+    font-weight: 100; /* Thin */
+    font-style: normal;
+  }
+  

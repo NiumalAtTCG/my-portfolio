@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* Horizontal Scrollbar with Gradient */
+.w-full::-webkit-scrollbar {
+  height: 12px; /* Set height */
+}
+
+.w-full::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #ff00ff, #00ffff); /* Gradient color */
+  border-radius: 8px;
+}
+
+.w-full::-webkit-scrollbar-track {
+  background: rgba(255, 254, 254, 0.1); /* Track background */
+}
+/* Make each section take up the full height of the viewport */
+/* Add some styles for active sections */
+section {
+  transition: background-color 0.3s;
+}
+
+/* For WebKit Browsers (Chrome, Edge, Safari) */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #00FFFF, #57ffff, #FFFFFF);
+  border-radius: 6px;
+}
+
+
+
+body::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Optional: Set the track background color */
+  border-radius: 6px;
+}
+
+
