@@ -47,6 +47,7 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []); 
+  
 
 const handleScroll = (event, targetId) => {
   event.preventDefault(); // Prevent the default anchor link behavior
@@ -250,7 +251,7 @@ const handleScroll = (event, targetId) => {
           <button
   onClick={() => {
     const link = document.createElement('a');
-    link.href = '/assets/Niumal.pdf'; // Path to your CV file
+    link.href = 'https://niumalattcg.github.io/my-portfolio/assets/Niumal.pdf'; // Full URL
     link.download = 'Niumal.pdf'; // Name of the downloaded file
     link.click();
   }}
@@ -437,8 +438,8 @@ const handleScroll = (event, targetId) => {
   <div className="absolute inset-0 bg-black bg-opacity-0 flex flex-col justify-center items-center text-center px-4 py-8 text-black">
     {/* Branding or About Section */}
     <div className=" px-32 py-8 ">
-      <h2 className="text-3xl md:text-5xl   font-lexendSemiBold"> Building ideas in to reality Lets create something</h2>
-      <p className="mt-2 py-4 text-3xl md:text-5xl  font-lexendSemiBold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+      <h2 className="text-1xl md:text-5xl   font-lexendSemiBold"> Building ideas in to reality Lets create something</h2>
+      <p className="mt-2 py-4 text-1xl md:text-5xl  font-lexendSemiBold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
         Amazing
       </p>
     </div>
