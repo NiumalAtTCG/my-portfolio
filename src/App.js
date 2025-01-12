@@ -378,7 +378,7 @@ const handleScroll = (event, targetId) => {
       {filteredProjects.map((project) => (
         <div
           key={project.id}
-          className="flex-none w-11/12 sm:w-9/12 md:w-6/12 h-46 sm:h-80 md:h-96 bg-cover bg-center rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
+          className="flex-none w-11/12 sm:w-9/12 md:w-6/12 h-48 sm:h-80 md:h-96 bg-cover bg-center rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
           style={{ backgroundImage: `url(${project.image})` }}
         ></div>
       ))}
