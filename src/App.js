@@ -171,7 +171,7 @@ const handleScroll = (event, targetId) => {
       {/* Main Content */}
       <div
         id="home"
-        className="container h-full mx-auto flex flex-col md:flex-row justify-evenly px-16 py-5 active:"
+        className="container h-full mx-auto flex flex-col md:flex-row justify-evenly px-16   md:py-5 active:"
         style={{ paddingTop: "calc(6rem + 16px)" }} // Adjust this to the navbar height + any padding
       >
         <div className="text-center md:text-left">
@@ -184,7 +184,7 @@ const handleScroll = (event, targetId) => {
             />
 
             {/* Overlayed Typewriter Text */}
-            <div className="absolute inset-0 flex items-center justify-start ps-16 md:ps-36">
+            <div className="absolute inset-0 flex items-center justify-start px-16 md:ps-36">
               <h1 className=" sm:text-3xl md:text-5xl font-bold text-[#E0E0E0] ps-3 rounded-lg">
                 <span
                   style={{
@@ -211,7 +211,7 @@ const handleScroll = (event, targetId) => {
             <h1 className="text-2xl font-lexendThin">Hi, I am</h1>
             <h1 className="text-4xl md:text-6xl font-lexendSemiBold text-[#C7D9E7]">NIUMAL SILVA</h1>
 
-            <div className="flex flex-row md:gap-6 py-2  gap-2 text-1xl md:text-2xl">
+            <div className="flex flex-row md:gap-6 py-2  gap-2 text-2xl md:text-2xl">
               {/* Social Links */}
               <a
                 href="mailto:your-email@example.com"
@@ -255,7 +255,7 @@ const handleScroll = (event, targetId) => {
     link.download = 'Niumal.pdf'; // Name of the downloaded file
     link.click();
   }}
-  className="mt-6 w-full md:w-auto bg-[#00FFFF] hover:bg-[#57ffff] text-gray-700 font-bold font-lexendSemiBold px-6 py-3 rounded-lg transition-all"
+  className="mt-6 w-full md:w-auto bg-[#00FFFF] hover:bg-[#57ffff] text-gray-700 font-bold font-lexendSemiBold px-16 py-3 rounded-lg transition-all"
 >
   Download CV
 </button>
@@ -280,12 +280,12 @@ const handleScroll = (event, targetId) => {
   className="w-full min-h-screen flex flex-col items-center md:items-start justify-start bg-black text-white"
 >
   {/* Heading */}
-  <h1 className="text-4xl md:text-6xl font-bold px-6 md:px-16 font-lexendSemiBold mt-10 pt-10">
+  <h1 className="text-4xl md:text-6xl font-bold px-16 md:px-16 font-lexendSemiBold mt-10 pt-10">
     My Skills
   </h1>
 
   {/* Skill Categories */}
-  <div className="flex flex-col gap-6 px-6 md:px-16 py-10 w-full">
+  <div className="flex flex-col gap-6 px-16 md:px-16 py-10 w-full">
     {/* Languages */}
     <div className="w-full rounded-lg border border-white flex flex-col md:flex-row items-center md:justify-between px-6 md:px-16 py-6">
       <h1 className="text-xl md:text-2xl font-bold font-lexendSemiBold mb-4 md:mb-0">
@@ -378,7 +378,7 @@ const handleScroll = (event, targetId) => {
       {filteredProjects.map((project) => (
         <div
           key={project.id}
-          className="flex-none w-11/12 sm:w-9/12 md:w-6/12 h-64 sm:h-80 md:h-96 bg-cover bg-center rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
+          className="flex-none w-11/12 sm:w-9/12 md:w-6/12 h-44 sm:h-80 md:h-96 bg-cover bg-center rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
           style={{ backgroundImage: `url(${project.image})` }}
         ></div>
       ))}
@@ -428,29 +428,33 @@ const handleScroll = (event, targetId) => {
 </div>
 <footer className="w-full bg-black text-white relative">
   {/* Background Image */}
-  <img
-    src={footer}
-    alt="Footer Background"
-    className="w-full h-auto object-cover"
-  />
+  <div className="absolute inset-0">
+    <img
+      src={footer}
+      alt="Footer Background"
+      className="w-full h-full object-cover"
+    />
+  </div>
 
   {/* Overlay Content */}
-  <div className="absolute inset-0 bg-black bg-opacity-0 flex flex-col justify-center items-center text-center px-4 py-8 text-black">
+  <div className="relative z-10 bg-black bg-opacity-10 flex flex-col justify-center items-center text-center px-4 py-8 text-white">
     {/* Branding or About Section */}
-    <div className=" px-32 py-8 ">
-      <h2 className="text-1xl md:text-5xl   font-lexendSemiBold"> Building ideas in to reality Lets create something</h2>
-      <p className="mt-2 py-4 text-1xl md:text-5xl  font-lexendSemiBold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+    <div className="px-4 sm:px-8 lg:px-32 py-6 sm:py-8">
+      <h2 className="text-xl sm:text-2xl lg:text-5xl font-lexendSemiBold">
+        Building ideas into reality. Let's create something
+      </h2>
+      <p className="mt-2 py-2 sm:py-4 text-lg sm:text-2xl lg:text-5xl font-lexendSemiBold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
         Amazing
       </p>
     </div>
 
     {/* Links Section */}
     <div className="mb-6">
-      <ul className="flex flex-wrap justify-center gap-4 font-lexendSemiBold">
+      <ul className="flex flex-wrap justify-center gap-2 sm:gap-4 font-lexendSemiBold">
         <li>
           <a
             href="#about"
-            className="bg-black text-white  px-4 py-2 rounded-lg text-lg hover:bg-purple-800 transition-colors shadow-md"
+            className="bg-black text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg text-sm sm:text-lg hover:bg-purple-800 transition-colors shadow-md"
           >
             About
           </a>
@@ -458,7 +462,7 @@ const handleScroll = (event, targetId) => {
         <li>
           <a
             href="#myProjects"
-            className="bg-black text-white  px-4 py-2 rounded-lg text-lg hover:bg-purple-800 transition-colors shadow-md"
+            className="bg-black text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg text-sm sm:text-lg hover:bg-purple-800 transition-colors shadow-md"
           >
             Projects
           </a>
@@ -466,7 +470,7 @@ const handleScroll = (event, targetId) => {
         <li>
           <a
             href="#contact"
-            className="bg-black text-white  px-4 py-2 rounded-lg text-lg hover:bg-purple-800 transition-colors shadow-md"
+            className="bg-black text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg text-sm sm:text-lg hover:bg-purple-800 transition-colors shadow-md"
           >
             Contact
           </a>
@@ -474,7 +478,7 @@ const handleScroll = (event, targetId) => {
         <li>
           <a
             href="#skills"
-            className="bg-black text-white px-4 py-2 rounded-lg text-lg hover:bg-purple-800 transition-colors shadow-md"
+            className="bg-black text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg text-sm sm:text-lg hover:bg-purple-800 transition-colors shadow-md"
           >
             Skills
           </a>
@@ -484,45 +488,45 @@ const handleScroll = (event, targetId) => {
 
     {/* Social Media Icons */}
     <div className="mb-6">
-      <div className="flex space-x-6">
-      <a
-                href="mailto:your-email@example.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center hover:text-blue-500"
-              >
-                <FaEnvelope />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/yourprofile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center  hover:text-blue-500"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://github.com/yourgithubusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center hover:text-gray-700"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href="https://www.instagram.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center  hover:text-pink-500"
-              >
-                <FaInstagram />
-              </a>
+      <div className="flex justify-center space-x-4 sm:space-x-6">
+        <a
+          href="mailto:your-email@example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center hover:text-blue-500 text-xl"
+        >
+          <FaEnvelope />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/yourprofile"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center hover:text-blue-500 text-xl"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://github.com/yourgithubusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center hover:text-gray-700 text-xl"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://www.instagram.com/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center hover:text-pink-500 text-xl"
+        >
+          <FaInstagram />
+        </a>
       </div>
     </div>
 
     {/* Copyright Section */}
     <div>
-      <p className="text-black text-sm ">
+      <p className="text-sm sm:text-base">
         &copy; {new Date().getFullYear()} Your Name. All rights reserved.
       </p>
     </div>
