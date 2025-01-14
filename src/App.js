@@ -89,30 +89,37 @@ function App() {
     };
   }, []);
  
-    const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      message: '',
-    });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();  // Prevent default form submission behavior
+
+    try {
+      // Send the form data as a JSON request to the backend
+      const response = await fetch('http://localhost:5000/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      // Parse the response from the backend
+      const result = await response.json();
+
+      // Handle the response (e.g., show a success message)
+      console.log(result.message);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
   
-    const handleChange = (e) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-  
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const response = await fetch('https://your-backend-url/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
-        });
-        const result = await response.json();
-        console.log(result.message);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
   return (
     <div className=" bg-black text-white min-h-screen ">
       {/* Navigation Bar */}
@@ -505,39 +512,39 @@ function App() {
 
           {/* Contact Form */}
           <div className="flex-1">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        value={formData.name}
-        onChange={handleChange}
-        className="w-full p-4 bg-gray-800 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00FFFF]"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        value={formData.email}
-        onChange={handleChange}
-        className="w-full p-4 bg-gray-800 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00FFFF]"
-      />
-      <textarea
-        name="message"
-        placeholder="Your Message"
-        rows="5"
-        value={formData.message}
-        onChange={handleChange}
-        className="w-full p-4 bg-gray-800 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00FFFF]"
-      ></textarea>
-      <button
-        type="submit"
-        className="bg-[#00FFFF] text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-[#57ffff] transition-all duration-300"
-      >
-        Send Message
-      </button>
-    </form>
-          </div>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full p-4 bg-gray-800 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00FFFF]"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full p-4 bg-gray-800 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00FFFF]"
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          rows="5"
+          value={formData.message}
+          onChange={handleChange}
+          className="w-full p-4 bg-gray-800 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00FFFF]"
+        ></textarea>
+        <button
+          type="submit"
+          className="bg-[#00FFFF] text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-[#57ffff] transition-all duration-300"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
         </div>
       </div>
       <footer className="w-full bg-black text-white relative">
