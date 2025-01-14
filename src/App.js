@@ -195,7 +195,7 @@ function App() {
 
             {/* Overlayed Typewriter Text */}
             <div className="absolute inset-0 flex items-center justify-start px-16 md:ps-36">
-              <h1 className=" sm:text-3xl md:text-4xl font-bold text-[#E0E0E0] ps-3 rounded-lg">
+              <h1 className=" sm:text-3xl md:text-5xl font-bold text-[#E0E0E0] ps-3 rounded-lg">
                 <span
                   style={{
                     background: "linear-gradient(to right, #00FFFF, #FFFFFF)",
@@ -207,8 +207,7 @@ function App() {
                   <Typewriter
                     words={[
                       "Full Stack Developer",
-                      "Undergraduate Student",
-                      "UI/UX Designer",
+                       "UI/UX Designer",
                     ]}
                     loop={0} // Set to 0 for infinite loop
                     cursor
