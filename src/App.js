@@ -21,8 +21,9 @@ import eventfi from "./assets/eventfi.svg";
 import smarthome from "./assets/smarthome.svg";
 import chat from "./assets/chat.svg";
 import hospital from "./assets/hospitalsvg.svg";
+import raula from "./assets/raula.svg";
 import footer from "./assets/footer 26.svg";
-
+import firebaseApp from "./firebaseConfig";
 import "./styles/fonts.css";
 import { FaEnvelope, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
@@ -34,6 +35,7 @@ const projects = [
   { id: 3, type: "mobile", image: smarthome },
   { id: 4, type: "mobile", image: chat },
   { id: 5, type: "desktop", image: hospital },
+  { id: 6, type: "mobile", image: raula },
 ];
 
 function App() {
