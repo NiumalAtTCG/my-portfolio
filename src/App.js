@@ -10,6 +10,7 @@ import c from "./assets/C++.svg";
 import php from "./assets/PHP.svg";
 import mysql from "./assets/mySQL Logo.svg";
 import mongodb from "./assets/mongo Db.svg";
+import firebase from "./assets/Firebase.svg";
 import react from "./assets/React.svg";
 import node from "./assets/Nodejs.svg";
 import boostrap from "./assets/Bootstrap.svg";
@@ -420,6 +421,11 @@ function App() {
               />
               <img
                 src={mongodb}
+                alt="MongoDB"
+                className="w-10 md:w-14 h-auto object-contain"
+              />
+               <img
+                src={firebase}
                 alt="MongoDB"
                 className="w-10 md:w-14 h-auto object-contain"
               />
