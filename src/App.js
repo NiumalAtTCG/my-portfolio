@@ -24,7 +24,7 @@ import chat from "./assets/chat.svg";
 import hospital from "./assets/hospitalsvg.svg";
 import raula from "./assets/raula.svg";
 import footer from "./assets/footer 26.svg";
-import firebaseApp from "./firebaseConfig";
+
 import "./styles/fonts.css";
 import { FaEnvelope, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
